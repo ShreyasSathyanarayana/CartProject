@@ -1,0 +1,17 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/add-item/*"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/addtocart/*"
+  to = "/index.html"
+  status = 200
+  force = true
