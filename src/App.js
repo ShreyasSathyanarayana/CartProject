@@ -16,13 +16,13 @@ function App(){
             <br />
             {/* <Link to="/home"> <button className="btn btn-primary">Create Task</button></Link> */}
             <div>
-            <Link to="/addtocart" className="btn btn-warning text-white">Cart-List</Link><Link to="/" className="btn btn-danger ms-1">Shopping</Link><Link to="/add-item" className="btn btn-success ms-1">Add Product</Link>
+            <Link to="addtocart" className="btn btn-warning text-white">Cart-List</Link><Link to="/" className="btn btn-danger ms-1">Shopping</Link><Link to="add-item" className="btn btn-success ms-1">Add Product</Link>
             </div>
       </header>
          <Routes>
          <Route path="/" element={<CartList/>}/>
-         <Route path="/add-item" element={<Add/>}/>
-         <Route path="/addtocart"  element={<AddToCart/>}/>
+         <Route path="add-item" element={<Add/>}/>
+         <Route path="addtocart"  element={<AddToCart/>}/>
          
          </Routes>
     </div>
