@@ -20,9 +20,9 @@ function App(){
             </div>
       </header>
          <Routes>
-         <Route path="/" Component={CartList}/>
-         <Route path="/add-item" Component={Add}/>
-         <Route path="/addtocart" exact Component={AddToCart}/>
+         <Route path="/" element={CartList}/>
+         <Route path="/add-item" element={Add}/>
+         <Route path="/addtocart"  element={AddToCart}/>
          
          </Routes>
     </div>
