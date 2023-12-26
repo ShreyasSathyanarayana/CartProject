@@ -2,6 +2,7 @@ import { useSelector,useDispatch } from "react-redux";
 import {deletecart,editCart} from '../cart-components/redux/slice/cardslice'
 import './CartList.css'
 import { useState,useEffect } from "react";
+import des from "../default-pic.jpg"
 function AddToCart(){
     const state =useSelector((state)=>state.cart.data)
     // console.log("addto card quantity value",state[0].quantity)
@@ -51,7 +52,7 @@ function AddItem({title,price,quantity,image,index}){
     
     return(
             <div className="additem-container p-3  m-2 mt-0" style={{width: "98%",display:"flex",alignItems:"center",border:"5px solid gold",borderRadius:"25px",backgroundColor:"white",color:"black"}}>
-                <img src={image} className="card-img-top" alt="..." style={{height:"10rem" ,width:"10rem"}}></img>
+                <img src={image?image:des} className="card-img-top" alt="..." style={{height:"10rem" ,width:"10rem"}}></img>
                 <div className="card-body ps-5">
                     <p className="card-text"><span style={{fontWeight:"bold"}}>Product Name:</span> <span className="ms-2">{title}</span></p>
                     <p className="card-text "><span style={{fontWeight:"bold"}}>Price:</span> <span className="ms-2 text-success">₹{price}</span></p>

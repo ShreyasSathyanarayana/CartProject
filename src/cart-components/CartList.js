@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import {useDispatch} from 'react-redux'
 import { addCart } from "./redux/slice/cardslice";
 import { data } from "./Data";
+// import defa from "C:\Users\sathy\Documents\GitHub\CartProject\src\default-pic.jpg"
+import des from "../default-pic.jpg"
 import './CartList.css'
 function CartList(){
-    // const [data,setData]=useState(null);
+    const [datas,setDatas]=useState(null);
     // const state = useSelector(state=>state);
     // console.log("cart -list state value on update",state)
     
@@ -14,6 +16,22 @@ function CartList(){
     //     .catch((err)=>alert("please check your internet "+err))
     // },[]);
     // console.log(data)
+    useEffect(()=>{
+       if(!localStorage.getItem("cart-item")){
+           localStorage.setItem("cart-item",JSON.stringify(data));
+           const value = localStorage.getItem("cart-item")
+          const json =JSON.parse(value)
+          console.log(...data)
+          setDatas(json)
+       }
+       else{
+        const value = localStorage.getItem("cart-item")
+       const json =JSON.parse(value)
+       console.log(...data)
+       setDatas(json)
+       }
+       
+    },[])
 
     if(!data){
         return(
@@ -23,7 +41,7 @@ function CartList(){
     return(
         <div className="card-list">
             {
-              data&& data.map((item,index)=><Item id={item.id} title={item.title} price={item.price} description={item.description} image={item.image} index={index}/>)
+              datas&& datas.map((item,index)=><Item  title={item.title} price={item.price} description={item.description?item.description:null} image={item.image} index={index}/>)
             }  
         </div>
     )
@@ -71,10 +89,9 @@ export function Item({id,title,price,description,image,index}){
     const displayText = isExpanded ? description : `${description.slice(0, maxCharCount)}...`;
     return(
         <div className="card" style={{width: "18rem"}}>
-            <img src={image} className="card-img-top p-5" alt="..." height={"50%"}></img>
+            <img src={image?image:des} className="card-img-top p-5" alt="..." height={"50%"}></img>
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
-                <p>id:{id}</p>
                 <p style={{marginBottom:"0"}} >{displayText}</p>
                 {description.length > maxCharCount && (
                 <p onClick={toggleReadMore} className="text-primary text-end read-more">
