@@ -20,9 +20,9 @@ function App(){
             </div>
       </header>
          <Routes>
-         <Route path="/" element={CartList}/>
-         <Route path="/add-item" element={Add}/>
-         <Route path="/addtocart"  element={AddToCart}/>
+         <Route path="/" element={<CartList/>}/>
+         <Route path="/add-item" element={<Add/>}/>
+         <Route path="/addtocart"  element={<AddToCart/>}/>
          
          </Routes>
     </div>
