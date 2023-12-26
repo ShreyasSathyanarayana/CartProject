@@ -1,6 +1,7 @@
 import { data } from "./Data";
-
+import {useNavigate} from 'react-router-dom'
 export function Add(){
+  const history = useNavigate();
     const addData = ()=>{
          const name =document.getElementById("name").value;
          const description = document.getElementById("description").value;
@@ -12,7 +13,7 @@ export function Add(){
          }
          const prevValue = JSON.parse(localStorage.getItem("cart-item"))
          localStorage.setItem("cart-item",JSON.stringify(prevValue?[...prevValue,datas]:[...data,datas]))
-         console.log(JSON.parse(localStorage.getItem("cart-item")));
+         history("/")
     }
     return(
         <div className="p-5">
