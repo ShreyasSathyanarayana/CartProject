@@ -88,18 +88,18 @@ export function Item({id,title,price,description,image,index}){
 
     const displayText = isExpanded ? description : `${description.slice(0, maxCharCount)}...`;
     return(
-        <div className="card" style={{width: "60%%",height:"100%"}}>
+        <div className="card" style={{width: "60%%",padding:"2%"}}>
             <img src={image?image:des} className="card-img-top p-5" alt="..." height={"50%"}></img>
             <div className="card-body">
-                <h5 className="card-title">{title}</h5>
-                <p style={{marginBottom:"0"}} className="fs-6" >{displayText}</p>
+                <h6 className="card-title">{title}</h6>
+                <p style={{marginBottom:"0",fontSize:"80%"}}  >{displayText}</p>
                 {description.length > maxCharCount && (
                 <p onClick={toggleReadMore} className="text-primary text-end read-more">
                      {isExpanded ? 'Read Less' : 'Read More'}
                 </p>
                 )}
-                <p>Price: ₹<span className="text-danger">{price}</span></p>
-                <p>Quantity:<div className="btn-group ms-5" role="group" aria-label="Basic mixed styles example">
+                <p style={{fontSize:"80%"}}>Price: ₹<span className="text-danger">{price}</span></p>
+                <p style={{fontSize:"80%"}}>Quantity:<div className="btn-group ms-5" role="group" aria-label="Basic mixed styles example">
                             <button type="button" className="btn btn-danger" onClick={decrement} disabled={decrementbtn} >-</button>
                             <p className="mb-0 p-1 pt-2">{quantity}</p>
                             <button type="button" className="btn btn-success" onClick={increment}>+</button>
