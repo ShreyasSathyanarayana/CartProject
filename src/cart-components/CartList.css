@@ -24,7 +24,9 @@
 .additem-container{
     border-width: 5px ;
     border-style: solid;
+    height: 30vh;
 }
+
 
 .Cart-header{
     background-image: linear-gradient(to left,gold,purple);
@@ -44,5 +46,9 @@
         width: 100%;
         row-gap: 0.5%;
         column-gap: 2%;
+    }
+    .additem-container p{
+        font-size: 60%;
+        
     }
   }
