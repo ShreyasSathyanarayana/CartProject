@@ -27,7 +27,7 @@ export function Add(){
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Price:</label>
-    <input type="text" class="form-control" id="price"></input>
+    <input type="number" class="form-control" id="price"></input>
   </div>  
   <button type="submit" class="btn btn-primary" onClick={addData}>Submit</button>
         </div>

@@ -88,7 +88,7 @@ export function Item({id,title,price,description,image,index}){
 
     const displayText = isExpanded ? description : `${description.slice(0, maxCharCount)}...`;
     return(
-        <div className="card" style={{width: "18rem"}}>
+        <div className="card" style={{width: "60%%",height:"100%"}}>
             <img src={image?image:des} className="card-img-top p-5" alt="..." height={"50%"}></img>
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
