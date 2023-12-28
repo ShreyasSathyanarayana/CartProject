@@ -92,7 +92,7 @@ export function Item({id,title,price,description,image,index}){
             <img src={image?image:des} className="card-img-top p-5" alt="..." height={"50%"}></img>
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
-                <p style={{marginBottom:"0"}} >{displayText}</p>
+                <p style={{marginBottom:"0"}} className="fs-6" >{displayText}</p>
                 {description.length > maxCharCount && (
                 <p onClick={toggleReadMore} className="text-primary text-end read-more">
                      {isExpanded ? 'Read Less' : 'Read More'}
